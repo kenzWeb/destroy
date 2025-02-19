@@ -36,7 +36,7 @@ const Missions: React.FC = () => {
       if (!response.ok) throw new Error('Failed to fetch missions');
       const data = await response.json();
       setMissions(data);
-    } catch (err) {
+    } catch {
       setError('Ошибка при загрузке миссий');
     } finally {
       setIsLoading(false);
@@ -60,7 +60,7 @@ const Missions: React.FC = () => {
 
       if (!response.ok) throw new Error('Failed to delete mission');
       await fetchMissions();
-    } catch (err) {
+    } catch {
       setError('Ошибка при удалении миссии');
     }
   };
